@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tambike Profiles</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== REALISTIC BACKGROUND ===== */
+body {
+  background: url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac") center/cover no-repeat fixed;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* dark cinematic overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+header {
+  padding: 30px;
+  text-align: center;
+}
+
+.subtitle {
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+.profiles {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px;
+}
+
+.profile-card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 4px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-card:hover {
+  transform: scale(1.12);
+}
+
+.profile-card:hover .avatar {
+  border-color: #e50914;
+}
+
+.name {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  opacity: 0.8;
+}
+
+/* PROFILE PAGE */
+.profile-page {
+  display: none;
+  padding: 40px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(20,20,20,0.85);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+  text-align: center;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.back-btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 18px;
+  background: #e50914;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #ff1f2f;
+}
+
+@media(max-width: 600px) {
+  .avatar {
+    width: 110px;
+    height: 110px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="home">
+<header>
+  <h1>Tambike Members</h1>
+  <p class="subtitle">Choose a person</p>
+</header>
+
+<section class="profiles">
+
+<a class="profile-card" onclick="openProfile('jayem')">
+  <div class="avatar"><img src="jayem.png"></div>
+  <div class="name">Jayem</div>
+</a>
+
+<a class="profile-card" onclick="openProfile('tantan')">
+  <div class="avatar"><img src="tantan.png"></div>
+  <div class="name">Tantan</div>
+</a>
+
+<a class="profile-card" onclick="openProfile('panja')">
+  <div class="avatar"><img src="panja.png"></div>
+  <div class="name">Panja</div>
+</a>
+
+<a class="profile-card" onclick="openProfile('deydey')">
+  <div class="avatar"><img src="deydey.png"></div>
+  <div class="name">Dey</div>
+</a>
+
+<a class="profile-card" onclick="openProfile('elthon')">
+  <div class="avatar"><img src="elthon.png"></div>
+  <div class="name">Elthon</div>
+</a>
+
+<a class="profile-card" onclick="openProfile('rhondel')">
+  <div class="avatar"><img src="rhondel.png"></div>
+  <div class="name">Rhondel</div>
+</a>
+
+<a class="profile-card" onclick="openProfile('arjel')">
+  <div class="avatar"><img src="arjel.png"></div>
+  <div class="name">Arjel</div>
+</a>
+
+<a class="profile-card" onclick="openProfile('Vincent')">
+  <div class="avatar"><img src="bentong.png"></div>
+  <div class="name">Vincent</div>
+</a>
+</section>
+
+<footer>Tambike Profile</footer>
+</div>
+
+<div id="jayem" class="profile-page"><div class="card"><div class="profile-photo"><img src="jayem.png"></div><h2>Jayem</h2><p>Burat</p><a class="back-btn" onclick="goHome()">⬅ Back</a></div></div>
+
+<div id="tantan" class="profile-page"><div class="card"><div class="profile-photo"><img src="tantan.png"></div><h2>Tantan</h2><p>Family Member</p><a class="back-btn" onclick="goHome()">⬅ Back</a></div></div>
+
+<div id="panja" class="profile-page"><div class="card"><div class="profile-photo"><img src="panja.png"></div><h2>Panja</h2><p>Family Member</p><a class="back-btn" onclick="goHome()">⬅ Back</a></div></div>
+
+<div id="dey" class="profile-page"><div class="card"><div class="profile-photo"><img src="dey.png"></div><h2>Dey</h2><p>Family Member</p><a class="back-btn" onclick="goHome()">⬅ Back</a></div></div>
+
+<div id="elthon" class="profile-page"><div class="card"><div class="profile-photo"><img src="elthon.png"></div><h2>Elthon</h2><p>Family Member</p><a class="back-btn" onclick="goHome()">⬅ Back</a></div></div>
+
+<div id="rhondel" class="profile-page"><div class="card"><div class="profile-photo"><img src="rhondel.png"></div><h2>Rhondel</h2><p>Family Member</p><a class="back-btn" onclick="goHome()">⬅ Back</a></div></div>
+
+<div id="arjel" class="profile-page"><div class="card"><div class="profile-photo"><img src="arjel.png"></div><h2>Arjel</h2><p>Family Member</p><a class="back-btn" onclick="goHome()">⬅ Back</a></div></div>
+
+<div id="Vincent" class="profile-page"><div class="card"><div class="profile-photo"><img src="bentong.png"></div><h2>Arjel</h2><p>Family Member</p><a class="back-btn" onclick="goHome()">⬅ Back</a></div></div>
+
+<script>
+function openProfile(id) {
+  document.getElementById("home").style.display = "none";
+  document.querySelectorAll('.profile-page').forEach(p => p.style.display = "none");
+  document.getElementById(id).style.display = "block";
+}
+
+function goHome() {
+  document.querySelectorAll('.profile-page').forEach(p => p.style.display = "none");
+  document.getElementById("home").style.display = "block";
+}
+</script>
+
+</body>
+</html>
